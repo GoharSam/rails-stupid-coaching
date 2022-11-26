@@ -1,9 +1,10 @@
-<h1>Your question :</h1>
+<h1>Stupid Coaching</h1>
+<h2>Your question :</h2>
 <%= params[:question] %>
 
 <h1>Coach's answer :</h1>
-<%= @answer %>
+<p><%= @answer %></p>
 
-
+<%= link_to "Ask a new question", ask_path %>
 <%# afficher la question qui a été posée %>
 <%# afficher la réponse du coach => elle dépend de la question %>

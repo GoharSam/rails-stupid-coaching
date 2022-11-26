@@ -4,8 +4,10 @@ class QuestionsController < ApplicationController
 
   def answer
     @question = params[:question]
-    if @question.downcase == "i am going to work right now!"
+    if @question.downcase! == "i am going to work right now"
       @answer = "Great"
+    elsif @question =~ /i am going to work/i
+      @answer = "Great!"
     elsif @question.end_with?("?") # TODO: return coach answer to your_message
       @answer = "Silly question, get dressed and go to work!"
     else
